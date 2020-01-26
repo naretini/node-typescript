@@ -52,6 +52,44 @@ npm install nodemon -D
    
 ```
 
+## Dot env
+1. Install
+```bash
+npm i dotenv
+npm i -D @types/dotenv
+ ```
+2. create env files 
+```
+touch .env # for common configuration
+touch .env.development # for dev configuration
+touch .env.test # for test configuration
+```
+
+3. add ./src/utils/config.ts
+
+```js
+import * as dotenv from "dotenv";
+
+dotenv.config();
+let path;
+switch (process.env.NODE_ENV) {
+    case "test":
+        path = `${__dirname}/../../.env.test`;
+        break;
+    case "production":
+        path = `${__dirname}/../../.env.production`;
+        break;
+    default:
+        path = `${__dirname}/../../.env.development`;
+}
+dotenv.config({ path: path });
+
+export const APP_ENV = process.env.APP_ENV;
+export const APP_ID = process.env.APP_ID;
+export const LOG_LEVEL = process.env.LOG_LEVEL;
+```
+
+
 2. edit package.json 
 ```js
   ...
