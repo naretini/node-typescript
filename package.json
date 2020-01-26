@@ -1,0 +1,26 @@
+{
+  "name": "node-typescript",
+  "version": "1.0.0",
+  "description": "1. Setup a Node.js project package.json: npm init -y 2. Add TypeScript ( npm install typescript -D ) 3. Add node.d.ts ( npm install @types/node -D ) 4. Init a tsconfig.json for TypeScript options with a few key options in your tsconfig.json ( npx tsc --init --rootDir src --outDir lib --esModuleInterop --resolveJsonModule -- lib es6,dom --module commonjs )",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/naretini/node-typescript.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/naretini/node-typescript/issues"
+  },
+  "homepage": "https://github.com/naretini/node-typescript#readme",
+  "devDependencies": {
+    "@types/node": "^13.5.0",
+    "nodemon": "^2.0.2",
+    "ts-node": "^8.6.2",
+    "typescript": "^3.7.5"
+  }
+}
