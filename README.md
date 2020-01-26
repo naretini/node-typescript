@@ -33,13 +33,34 @@ npm install nodemon -D
 ```js
 ...
 "scripts": {
-    "start": "npm run build",
+    "start": "npm run build:watch",
     "build": "tsc -p .",
-    "build": "nodemon --watch 'src/**/*.ts' --exec 'ts-node' src/index.ts"
+    "build:watch": "nodemon --watch 'src/**/*.ts' --exec 'ts-node' src/index.ts"
 },
 ...
 ```
 
+## Testing
+1. Install Jest for typescript
+(https://www.npmjs.com/package/ts-jest)
+```bash
+   npm i -D jest ts-jest @types/jest
+
+   npx ts-jest config:init
+
+   mkdir __tests__
+   
+```
+
+2. edit package.json 
+```js
+  ...
+    "scripts": {
+    ...
+    "test": "jest"
+  },
+  ...
+```
 
 ## Bonus 
 

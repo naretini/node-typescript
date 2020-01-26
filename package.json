@@ -1,10 +1,13 @@
 {
   "name": "node-typescript",
   "version": "1.0.0",
-  "description": "1. Setup a Node.js project package.json: npm init -y 2. Add TypeScript ( npm install typescript -D ) 3. Add node.d.ts ( npm install @types/node -D ) 4. Init a tsconfig.json for TypeScript options with a few key options in your tsconfig.json ( npx tsc --init --rootDir src --outDir lib --esModuleInterop --resolveJsonModule -- lib es6,dom --module commonjs )",
+  "description": "Setup a Nodejs + Typescript project",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "npm run build:watch",
+    "build": "tsc -p .",
+    "build:watch": "nodemon --watch 'src/**/*.ts' --exec 'ts-node' src/index.ts",
+    "test": "jest"
   },
   "repository": {
     "type": "git",
@@ -18,8 +21,11 @@
   },
   "homepage": "https://github.com/naretini/node-typescript#readme",
   "devDependencies": {
+    "@types/jest": "^24.9.1",
     "@types/node": "^13.5.0",
+    "jest": "^25.1.0",
     "nodemon": "^2.0.2",
+    "ts-jest": "^25.0.0",
     "ts-node": "^8.6.2",
     "typescript": "^3.7.5"
   }
